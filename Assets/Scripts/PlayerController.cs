@@ -1,67 +1,78 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+[RequireComponent(typeof(Rigidbody2D),typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
 {
+    public float jumpImpluse = 8f;
 
     public float moveSpeed = 5f;
-    public float moveInput;
+    Vector2 moveInput;
+    [SerializeField]
+    private bool _isMoving = false;
+    TouchingDirections touchingDirections;
+    public bool IsMoving { get
+        {
+            return _isMoving;
+        } private set
+        {
+            _isMoving = value;
+            animator.SetBool(AnimationString.isMoving, value);
+        } }
+    public bool _isFacingRight = true;
+    public bool IsFacingRight { get { return _isFacingRight; } private set { 
+        if( _isFacingRight != value) {
+                transform.localScale *= new Vector2(-1, 1);
+            }
+        _isFacingRight = value;
+        } }
+
     public Animator animator;
     public float high = 8f;
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchingDirections>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    
+    private void FixedUpdate()
     {
-        //move
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            animator.SetBool("Run", true);
-            moveInput = 1;
-            GetComponent<SpriteRenderer>().flipX = false;
-
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            animator.SetBool("Run", true);
-            moveInput = -1;
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-
-        else
-        {
-            moveInput = 0;
-            animator.SetBool("Run", false);
-        }
-        transform.Translate(Vector2.right * moveSpeed * moveInput * Time.deltaTime);
-
-        // jump
-        animator.SetFloat("AirSpeedY", rb.velocity.y);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger("Jump");
-            rb.velocity = new Vector2(rb.velocity.x, high);
-            animator.SetBool("Grounded", false);
-        }
-        if(Input.GetKey(KeyCode.J)) 
-        {
-            animator.SetTrigger("Attack1");
-        }
-
-
-        //fall  
-        if (animator.GetFloat("AirSpeedY") < 0)
-        {
-            animator.SetBool("Grounded", false);
-
-        }
-        else { animator.SetBool("Grounded", true); }
+        rb.velocity = new Vector2(moveInput.x * moveSpeed ,rb.velocity.y);
+        animator.SetFloat(AnimationString.yVelocity, rb.velocity.y);
     }
+    public void OnMove(InputAction.CallbackContext context) 
+    {
+        moveInput = context.ReadValue<Vector2>();
+        IsMoving = moveInput != Vector2.zero;
+        SetFacingDirection(moveInput);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.started && touchingDirections.IsGround)
+        {
+            animator.SetTrigger(AnimationString.jump);
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpluse);
+        }
+    }
+    private void SetFacingDirection(Vector2 moveInput)
+    {
+        if(moveInput.x > 0 && !IsFacingRight)
+        {
+            //face the right
+            IsFacingRight = true;
+        }else if(moveInput.x < 0 && IsFacingRight)
+        {
+            IsFacingRight = false;
+        }
+    }
+
+
 }
