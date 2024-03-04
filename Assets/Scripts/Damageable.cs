@@ -9,7 +9,7 @@ public class Damageable : MonoBehaviour
     Animator animator;
     [SerializeField] private int _maxHealth = 100;
     public UnityEvent damageableDeath;
-    public  UnityEvent<int, int> healthChanged ;
+    public UnityEvent<int, int> healthChanged;
     public int MaxHealth
     {
         get

@@ -22,11 +22,9 @@ public class HealthBar : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {    
         healthSlider.value = CalculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
-        healthBarText.text = "Health " + playerDamageable.Health + "/" + playerDamageable.MaxHealth;
-        
+        healthBarText.text = "Health " + playerDamageable.Health + "/" + playerDamageable.MaxHealth;     
     }
     private void OnEnable()
     {
@@ -36,7 +34,7 @@ public class HealthBar : MonoBehaviour
     {
         playerDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
     }
-    private float CalculateSliderPercentage(int currentHealth, int maxHealth)
+    private float CalculateSliderPercentage(float currentHealth, float maxHealth)
     {
         return currentHealth / maxHealth;
     }

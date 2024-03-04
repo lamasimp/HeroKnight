@@ -60,11 +60,6 @@ public class TouchingDirections : MonoBehaviour
         touchingCol = rb.GetComponent<CapsuleCollider2D>();
         animator = rb.GetComponent<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()
