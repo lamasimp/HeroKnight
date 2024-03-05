@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b4f0c85f617d543833ef8986b55a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 20
   knockBack: {x: 0, y: 0}
 --- !u!1 &6835579881779608393
 GameObject:
@@ -240,8 +240,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025861714, y: -0.013348066}
-  m_Size: {x: 0.21681978, y: 0.23072557}
+  m_Offset: {x: -0.03454351, y: -0.000254058}
+  m_Size: {x: 0.096009254, y: 0.156923}
   m_Direction: 0
 --- !u!1 &7869453224601775160
 GameObject:
@@ -428,6 +428,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _health: 50
   isInvincible: 0
   invincibilityTimer: 0.25
