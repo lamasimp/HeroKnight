@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -19,6 +20,7 @@ public class HealthBar : MonoBehaviour
             Debug.Log("no player found in the scene");
         }
         playerDamageable = player.GetComponent<Damageable>();
+       
     }
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = CalculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
         healthBarText.text = "Health " + playerDamageable.Health + "/" + playerDamageable.MaxHealth;     
     }
+    
     private void OnEnable()
     {
         playerDamageable.healthChanged.AddListener(OnPlayerHealthChanged);

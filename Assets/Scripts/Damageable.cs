@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,6 +10,8 @@ public class Damageable : MonoBehaviour
     [SerializeField] private int _maxHealth = 100;
     public UnityEvent damageableDeath;
     public UnityEvent<int, int> healthChanged;
+    public UnityEvent<int, int> healthChanged_Boss;
+
     public int MaxHealth
     {
         get
@@ -26,13 +28,16 @@ public class Damageable : MonoBehaviour
     {
         get
         {
-            return _health;
+              return _health;
         }
         set
         {
             _health = value;
+
             healthChanged?.Invoke(_health, MaxHealth);
-            if(_health <= 0 )
+            healthChanged_Boss?.Invoke(_health, MaxHealth);
+
+            if (_health <= 0 )
             {
                 IsAlive = false;
             }
