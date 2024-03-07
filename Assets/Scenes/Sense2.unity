@@ -1084,6 +1084,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 362cd473-7d69-449f-9298-81fdf4499ddd
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa8481ab-bd8c-4762-a3c1-5ecfeca1c42c
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1187,7 +1191,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 20, y: 5.35}
+  m_Size: {x: 12, y: 5.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1202,7 +1206,7 @@ Transform:
   m_GameObject: {fileID: 716385165}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.6905, y: -0.47449994, z: 0}
+  m_LocalPosition: {x: 152.6805, y: -0.47449994, z: 0}
   m_LocalScale: {x: 5.2475, y: 1.8313191, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6920,7 +6924,7 @@ Transform:
   m_GameObject: {fileID: 1287229285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130.11, y: -3.52, z: -10}
+  m_LocalPosition: {x: 168, y: 2, z: -10}
   m_LocalScale: {x: 1.5578793, y: 1.6859696, z: 1.2758}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7116,7 +7120,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 20, y: 8.011365}
+  m_Size: {x: 12, y: 8.011365}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7131,7 +7135,7 @@ Transform:
   m_GameObject: {fileID: 1478055747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.71, y: 2.5, z: 0}
+  m_LocalPosition: {x: 152.7, y: 2.5, z: 0}
   m_LocalScale: {x: 5.2642446, y: 1.8313, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7200,7 +7204,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 20, y: 5.35}
+  m_Size: {x: 12, y: 5.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7215,7 +7219,7 @@ Transform:
   m_GameObject: {fileID: 1554792293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.72942, y: -0.49399996, z: 0}
+  m_LocalPosition: {x: 152.7194, y: -0.49399996, z: 0}
   m_LocalScale: {x: 5.2365046, y: 1.8241733, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7539,7 +7543,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 20, y: 5.35}
+  m_Size: {x: 12, y: 5.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7554,7 +7558,7 @@ Transform:
   m_GameObject: {fileID: 1799747301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.6905, y: -0.5135, z: 0}
+  m_LocalPosition: {x: 152.6805, y: -0.5135, z: 0}
   m_LocalScale: {x: 5.236618, y: 1.8313243, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

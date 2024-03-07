@@ -9,6 +9,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3 (Mathf.Clamp(player.position.x, -76.21f, 93.2f), Mathf.Clamp(player.position.y, -30.4f, 2.1f),transform.position.z);
+        transform.position = new Vector3 (Mathf.Clamp(player.position.x, -78.7f, 92.8f), Mathf.Clamp(player.position.y, -30.34f, 2.5f),transform.position.z);
     }
 }
