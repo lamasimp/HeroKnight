@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7664942110338977257}
   - component: {fileID: 2062911850682276651}
+  - component: {fileID: 3406324865435599042}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -47,3 +48,33 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 4398122475376328679, guid: 6ce0c7bbb68996a449e305202d24d0e4, type: 3}
   healthTextPrefab: {fileID: 4398122475376328679, guid: 7e063c327cf7178418aed8133dc1ac02, type: 3}
   gameCanvas: {fileID: 0}
+--- !u!114 &3406324865435599042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140845772588825033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 74eadc188fe78884183975eea459e8ff, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 1e095e22-8ce7-4d8e-885c-a8a40bd595eb
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

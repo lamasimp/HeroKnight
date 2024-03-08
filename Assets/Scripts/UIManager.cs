@@ -1,8 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -43,5 +45,19 @@ public class UIManager : MonoBehaviour
             .GetComponent<TMP_Text>();
         tMPText.text = healthRestored.ToString();
     }
-    
+    void Update()
+    {
+        // Kiểm tra nếu người chơi bấm nút Esc
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Gọi phương thức để quay lại màn hình bắt đầu
+            BackToMainMenu();
+        }
+    }
+    public void BackToMainMenu()
+    {
+        // Tải scene MainMenu (màn hình bắt đầu game)
+        SceneManager.LoadScene(0);
+    }
+
 }
