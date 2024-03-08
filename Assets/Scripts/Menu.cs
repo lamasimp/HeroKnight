@@ -7,11 +7,11 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public void batdau()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void huongdan()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     public void thoat()
     {
