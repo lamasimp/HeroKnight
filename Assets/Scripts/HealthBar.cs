@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     Damageable playerDamageable;
     public TMP_Text healthBarText;
     public Slider healthSlider;
-
+    float delayTime = 2f;
     private void Awake()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -47,5 +47,21 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = CalculateSliderPercentage(newHealth, maxHealth);
         healthBarText.text = "Health " + newHealth + "/" + maxHealth;
 
+    }
+    private void Update()
+    {
+        
+            
+        if(healthSlider.value <= 0)
+        {
+            StartCoroutine(GameOverWithDelay());
+        }
+    }
+    IEnumerator GameOverWithDelay()
+    {
+        yield return new WaitForSeconds(delayTime); // Đợi trong 3 giây
+
+        // Sau khi đợi, chuyển đến màn hình Game Over
+        SceneManager.LoadScene(4, LoadSceneMode.Single);
     }
 }
