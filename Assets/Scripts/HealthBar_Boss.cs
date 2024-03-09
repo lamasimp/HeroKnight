@@ -61,6 +61,6 @@ public class HealthBar_Boss : MonoBehaviour
         yield return new WaitForSeconds(delayTime); // Đợi trong 3 giây
 
         // Sau khi đợi, chuyển đến màn hình Game Over
-        SceneManager.LoadScene(4, LoadSceneMode.Single);
+        SceneManager.LoadScene(5, LoadSceneMode.Single);
     }
 }
